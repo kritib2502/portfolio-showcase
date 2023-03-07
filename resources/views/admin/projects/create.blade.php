@@ -1,11 +1,7 @@
 
 <x-layout>
   <x-slot name="content">
-  {{-- <div
-    class="relative flex justify-center min-h-[80vh] bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-    <main class="max-w-lg mx-auto">
-      <h1 class="text-center font-bold text-xl mb-3">Create a Project</h1>
-      <form method="POST" action="/admin/projects/create" class="w-80"> --}}
+
        <div
     class="relative flex justify-center min-h-[80vh] bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
     <main class="max-w-lg mx-auto">
@@ -92,9 +88,31 @@
             {{ $category->name }}</option>
     @endforeach
 </select>
+<div class="mb-6">
+<label for="tags" class="block mb-2 uppercase font-bold text-xs text-gray-700">Tags</label>
+<select name="tags[]" id="tags" multiple="multiple">
+    @foreach ($tags as $tag)
+    <option value="{{ $tag->id }}"
+        @if (old('tags') && in_array($tag->id, old('tags')))
+                selected
+        @elseif ($project && $project->tags)
+            @foreach ($project->tags as $projectTag)
+                @if ($tag->id == $projectTag->id)
+                    selected
+                @endif
+            @endforeach
+        @endif
+        >
+        {{ $tag->name }}</option>
+    @endforeach
+</select>
+@error('tags')
+    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+@enderror
 </div>
         <div class="mb-6">
           <button type="submit" class="bg-green-700 text-white rounded py-2 px-4 hover:bg-green-600">Submit</button>
+           <button class=" bg-red-600 text-white rounded py-2 px-4 hover:bg-red-500"> <a href="/admin">Cancel</a></button>
         </div>
       </form>
     </main>
