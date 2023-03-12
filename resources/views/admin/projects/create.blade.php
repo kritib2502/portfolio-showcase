@@ -4,8 +4,10 @@
 
        <div
     class="relative flex justify-center min-h-[80vh] bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-    <main class="max-w-lg mx-auto">
+    <main class="max-w-lg mx-auto border-black bg-violet-100 border-2 p-12 rounded-lg m-16">
       @if ($project)
+      
+
 <h1 class="text-center font-bold text-xl mb-3">Edit Project: {{ $project->title }}</h1>
 <form method="POST" action="/admin/projects/{{ $project->id }}/edit" enctype="multipart/form-data">
     @method('PATCH')
@@ -115,6 +117,7 @@
            <button class=" bg-red-600 text-white rounded py-2 px-4 hover:bg-red-500"> <a href="/admin">Cancel</a></button>
         </div>
       </form>
+
     </main>
     </div>
   </x-slot>

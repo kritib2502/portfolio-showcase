@@ -3,7 +3,7 @@
   <x-slot name="content">
   <div
     class="relative flex justify-center min-h-[80vh] bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-    <main class="max-w-lg mx-auto">
+    <main class="max-w-lg mx-auto  border-black bg-blue-100 border-2 p-12 rounded-lg m-16 ">
          @if ($tag)
 <h1 class="text-center font-bold text-xl mb-3">Edit Tag: {{ $tag->name }}</h1>
 <form method="POST" action="/admin/tags/{{ $tag->id }}/edit" enctype="multipart/form-data">

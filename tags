@@ -1,0 +1,5 @@
+[{"id":1,"slug":"laravel","name":"Laravel","created_at":null,"updated_at":null},
+{"id":2,"slug":"docker","name":"Docker","created_at":null,"updated_at":null},
+{"id":3,"slug":"node.js","name":"Node.js","created_at":null,"updated_at":null},
+{"id":5,"slug":"react","name":"React","created_at":null,"updated_at":null},
+{"id":6,"slug":"swift-ui","name":"Swift UI","created_at":null,"updated_at":null}]

@@ -20,9 +20,10 @@ use App\Http\Controllers\TagController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/',function () {
+//     return view('home');
+// });
+Route::get('/', [ProjectController::class, 'home']);
 
 Route::get('/about', function () {
     return view('about');

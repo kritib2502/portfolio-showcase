@@ -12,7 +12,11 @@ use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
-    
+    public function home(Project $project){
+        return view('home')
+        ->with('projects',Project::first('published_date')->paginate(3)->withQueryString());
+    }
+
     public function index()
     {
         return view('projects.index')

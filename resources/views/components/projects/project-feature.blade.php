@@ -1,6 +1,7 @@
 
 @props(['project','showBody' => false]) 
-           <div class="p-6  bg-white overflow-hidden shadow sm:rounded-lg break-normal max-w-md">
+           <div class="group hover:-translate-y-1 hover:scale-110 hover:bg-indigo-200 transition ease-in-out p-6 m-4 bg-white overflow-hidden shadow sm:rounded-lg break-normal max-w-md border-solid border-4 border-indigo-200">
+               <div class="group-hover:text-white">
                 <div class="text-xl font-bold">
                     <a href="/projects/{{ $project->slug }}">{{ $project->title }}</a>
                 </div>
@@ -15,17 +16,7 @@
                    <div class="p-4">{!! $project->excerpt !!}</div>
                    </div>
                 @endif
-                @if ($showBody)
-                   @if($project->image)
-                    <img src="{{url('storage/' . $project->image)}}" alt="Placeholder Image" class="my-2">
-                    @else
-                       <div class="flex justify-center p-4">
-                         <img src="{{url('storage/images/placehold.jpg')}}" />
-                           </div>
-                              @endif
-                 <div class="flex flex-col gap-2 mt-2">{!! $project->body!!}</div>
-                @endif 
-     
+              </div>
             <footer class="text-sm text-gray-500 p-1 sm:text-left dark:text-gray-400">
              @if ($project->category)
               <span>Category:<a href="/projects/categories/{{ $project->category->slug }}"> {{ $project->category->name }} </a></span>

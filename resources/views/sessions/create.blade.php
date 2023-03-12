@@ -3,7 +3,7 @@
   <x-slot name="content">
    <div
     class="relative flex justify-center min-h-[80vh] bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-    <main class="max-w-lg mx-auto">
+    <main class="max-w-lg mx-auto border-black bg-white border-2 p-12 rounded-lg m-16">
       <h1 class="text-center font-bold text-xl mb-3">Log In</h1>
       <form method="POST" action="/login" class="w-80">
       @csrf
